@@ -8,12 +8,17 @@ const cardsContainer = document.querySelector('.cards-container')
 const productDetailAside = document.querySelector('.product-detail')
 const productDetailCloseIcon = document.querySelector('.product-detail-close')
 const titleShoppingCart = document.querySelector('.title-container')
+const desktopMenuGoToMyAccount = document.querySelector('.go-to-my-account')
+const myAccount = document.querySelector('.my-account')
+const logoHome = document.querySelector('.logo')
 
 navbarEmail.addEventListener('click', toggleDesktopMenu)
 menuMobileIcon.addEventListener('click', toggleMobileMenu)
 menuShoppingCart.addEventListener('click', toggleShoppingCart)
 productDetailCloseIcon.addEventListener('click', closeProductDetail) 
 titleShoppingCart.addEventListener('click', closeShoppingCart)
+desktopMenuGoToMyAccount.addEventListener('click', openMyAccount)
+logoHome.addEventListener('click', gotToHome)
 
 function toggleDesktopMenu() {
     const isAsideClosed = shoppingCartAside.classList.contains('inactive');
@@ -176,3 +181,11 @@ function openProductDetail() {
     productDetailAside.classList.remove('inactive')
 }
 
+function openMyAccount() {
+    myAccount.classList.remove('inactive')
+    desktopMenu.classList.add('inactive')
+}
+
+function gotToHome() {
+    myAccount.classList.add('inactive')
+}

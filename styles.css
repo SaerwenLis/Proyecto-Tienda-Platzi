@@ -14,7 +14,31 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 .inactive {
-    display: none;
+    display: none !important;
+}
+.primary-button {
+    background-color: var(--hospital-green);
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: 50px;
+    font-family: 'Quicksand', sans-serif;
+}
+.secondary-button {
+    background-color: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--hospital-green);
+    color: var(--hospital-green);
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: 50px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 /* Nav General */
@@ -36,6 +60,9 @@ nav .navbar-left ul {
 .navbar-left img {
     width: 140px;
     margin-right: 12px;
+}
+.logo:hover {
+    cursor: pointer;
 }
 .navbar-left ul li a, .navbar-right ul li a {
     text-decoration: none;
@@ -254,18 +281,7 @@ nav .navbar-left ul {
     font-size: var(--md);
     font-weight: bold;
 }
-.primary-button {
-    background-color: var(--hospital-green);
-    border-radius: 8px;
-    border: none;
-    color: var(--white);
-    width: 100%;
-    cursor: pointer;
-    font-size: var(--md);
-    font-weight: bold;
-    height: 50px;
-    font-family: 'Quicksand', sans-serif;
-}
+
 /* productos home */
 .cards-container {
     display: grid;
@@ -392,6 +408,57 @@ nav .navbar-left ul {
     align-items: center;
     justify-content: center;
 }
+
+/* create account */
+.login {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    z-index: 101;
+}
+.form-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 340px;
+}
+.title-myacc {
+    font-size: var(--lg);
+    margin-bottom: 44px;
+    text-align: start;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+}
+.label {
+    font-size: var(--sm);
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.input {
+    background-color: var(--text-input-field);
+    border: none;
+    border-radius: 8px;
+    height: 30px;
+    font-size: var(--md);
+    padding: 8px;
+    margin-bottom: 20px;
+    font-family: 'Quicksand', sans-serif;
+}
+.login-button {
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+
+/* my account */
+.value {
+    font-size: var(--sm);
+    margin: 8px 0 32px 0; 
+    color: var(--very-light-pink);
+}
+
 @media (max-width:640px) {
     .menu-icon {
         display: block;
@@ -446,6 +513,18 @@ nav .navbar-left ul {
         left: 20px;
         padding: 17px;
         box-sizing: border-box;
+    }
+    .login-button {
+        position: absolute;
+        bottom: 0;
+        width: inherit;
+        margin-bottom: 24px;
+    }
+    .secondary-button {
+        position: absolute;
+        bottom: 0;
+        width: inherit;
+        margin-bottom: 30px;
     }
 }
 @media (max-width:770px) {

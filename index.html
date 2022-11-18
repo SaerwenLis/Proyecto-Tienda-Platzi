@@ -14,7 +14,7 @@
     <nav>
         <img src="./Icons/icon_menu.svg" alt="menu" class="menu-icon">
         <div class="navbar-left">
-            <img src="./Logos/logo_yard_sale.svg" alt="logo">
+            <img src="./Logos/logo_yard_sale.svg" alt="logo" class="logo">
             <ul>
                 <li>
                     <a href="/">All</a>
@@ -50,7 +50,7 @@
                     <a href="/" class="title">My orders</a>
                 </li>
                 <li>
-                    <a href="/">My account</a>
+                    <a href="#" class="go-to-my-account">My account</a>
                 </li>
                 <li>
                     <a href="/">Sign out</a>
@@ -162,10 +162,48 @@
             </button>
         </div>
     </aside>
+    <div class="my-account inactive">
+        <div class="login">
+            <div class="form-container">
+                <h1 class="title-myacc">My account</h1>
+
+                <form action="/" class="form">
+                    <label for="name" class="label">Name</label>
+                    <p class="value">Platzi Example</p>
+
+                    <label for="email" class="label">Email address</label>
+                    <p class="value">platzi@example.com</p>
+
+                    <label for="password" class="label">Password</label>
+                    <p class="value">*********</p>
+
+                    <input type="submit" value="Edit" class="secondary-button edit-button">
+                </form>
+            </div>
+        </div>
+    </div>  
     <section class="main-container">
         <div class="cards-container">
          </div>
     </section>
+<!--     <div class="login create-account inactive">
+        <div class="form-container">
+            <h1 class="title-myacc">Create account</h1>
+
+            <form action="/" class="form">
+                <label for="name" class="label">Name</label>
+                <input type="text" id="name" placeholder="Platzi Example" class="input input-name">
+
+                <label for="email" class="label">Email address</label>
+                <input type="text" id="email" placeholder="platzi@example.com" class="input input-email">
+
+                <label for="password" class="label">Password</label>
+                <input type="password" id="password" placeholder="*********" class="input input-password">
+
+                <input type="submit" value="Create account" class="primary-button login-button">
+            </form>
+        </div>
+    </div> -->
 </body>
 <script src="./main.js"></script>
 </html>
