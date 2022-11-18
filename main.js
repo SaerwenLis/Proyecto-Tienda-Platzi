@@ -7,11 +7,13 @@ const shoppingCartAside = document.querySelector('.shopping-cart-container')
 const cardsContainer = document.querySelector('.cards-container')
 const productDetailAside = document.querySelector('.product-detail')
 const productDetailCloseIcon = document.querySelector('.product-detail-close')
+const titleShoppingCart = document.querySelector('.title-container')
 
 navbarEmail.addEventListener('click', toggleDesktopMenu)
 menuMobileIcon.addEventListener('click', toggleMobileMenu)
 menuShoppingCart.addEventListener('click', toggleShoppingCart)
 productDetailCloseIcon.addEventListener('click', closeProductDetail) 
+titleShoppingCart.addEventListener('click', closeShoppingCart)
 
 function toggleDesktopMenu() {
     const isAsideClosed = shoppingCartAside.classList.contains('inactive');
@@ -45,6 +47,10 @@ function toggleShoppingCart() {
     if (!isDesktopMenuClosed) {
         desktopMenu.classList.add('inactive')
     }
+}
+
+function closeShoppingCart() {
+    shoppingCartAside.classList.add('inactive')
 }
 
 /* Array hipotetico que devuelve cuando hicieramos consultas a la api para obtener los productos */
@@ -108,6 +114,8 @@ function renderProducts(array) {
         productImg.setAttribute('src', product.image);
         productImg.addEventListener('click', openProductDetail)
 
+        const productImgContainer = document.createElement('div')
+
         const productInfo= document.createElement('div');
         productInfo.classList.add('product-info');
 
@@ -123,14 +131,35 @@ function renderProducts(array) {
 
         const productInfoFigure = document.createElement('figure');
 
+        const removeProductContainer = document.createElement('div')
+        const removeProductFromCart = document.createElement('p')
+        removeProductFromCart.innerText = 'Remove from cart'   
+        removeProductFromCart.classList.add('inactive')
+        productImgContainer.appendChild(removeProductContainer)
+        removeProductContainer.appendChild(removeProductFromCart)
+        removeProductContainer.classList.add('remove-container')
+        
         const productImgCart = document.createElement('img');
         productImgCart.setAttribute('src', './Icons/bt_add_to_cart.svg');
+        productImgCart.addEventListener('click', changeCartIcon) 
+
+        function changeCartIcon() {
+            productImgCart.setAttribute('src', './Icons/bt_added_to_cart.svg')
+            removeProductFromCart.classList.add('remove-product')
+            removeProductFromCart.addEventListener('click', changeBackCartIcon)
+            function changeBackCartIcon() {
+                productImgCart.setAttribute('src', './Icons/bt_add_to_cart.svg');
+/*                 removeProductFromCart.style.display('none') */
+            }
+        }        
 
         productInfoFigure.appendChild(productImgCart);
 
+        productImgContainer.appendChild(productImg)
+
         productInfo.append(productInfoContainer, productInfoFigure);
 
-        productCard.append(productImg, productInfo);
+        productCard.append(productImgContainer, productInfo);
 
         cardsContainer.appendChild(productCard);  
     }
