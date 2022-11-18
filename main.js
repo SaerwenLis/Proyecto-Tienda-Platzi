@@ -11,6 +11,11 @@ const titleShoppingCart = document.querySelector('.title-container')
 const desktopMenuGoToMyAccount = document.querySelector('.go-to-my-account')
 const myAccount = document.querySelector('.my-account')
 const logoHome = document.querySelector('.logo')
+const myOrders = document.querySelector('.my-orders')
+const desktopMenuGoToMyorders = document.querySelector('.go-to-my-orders')
+const homeMainContainer = document.querySelector('.main-container')
+const mobileMenuGoToMyorders = document.querySelector('.mobile-go-to-my-orders')
+const mobileMenuGoToMyAccount = document.querySelector('.mobile-go-to-my-account')
 
 navbarEmail.addEventListener('click', toggleDesktopMenu)
 menuMobileIcon.addEventListener('click', toggleMobileMenu)
@@ -19,6 +24,9 @@ productDetailCloseIcon.addEventListener('click', closeProductDetail)
 titleShoppingCart.addEventListener('click', closeShoppingCart)
 desktopMenuGoToMyAccount.addEventListener('click', openMyAccount)
 logoHome.addEventListener('click', gotToHome)
+desktopMenuGoToMyorders.addEventListener('click', openMyOrders)
+mobileMenuGoToMyAccount.addEventListener('click', openMyAccount)
+mobileMenuGoToMyorders.addEventListener('click', openMyOrders)
 
 function toggleDesktopMenu() {
     const isAsideClosed = shoppingCartAside.classList.contains('inactive');
@@ -184,8 +192,22 @@ function openProductDetail() {
 function openMyAccount() {
     myAccount.classList.remove('inactive')
     desktopMenu.classList.add('inactive')
+    myOrders.classList.add('inactive')
+    homeMainContainer.classList.add('inactive')
+    mobileMenu.classList.add('inactive')
 }
 
 function gotToHome() {
     myAccount.classList.add('inactive')
+    myOrders.classList.add('inactive')
+    homeMainContainer.classList.remove('inactive')
+    mobileMenu.classList.add('inactive')
+}
+
+function openMyOrders() {
+    myOrders.classList.remove('inactive')
+    myAccount.classList.add('inactive')
+    desktopMenu.classList.add('inactive')
+    homeMainContainer.classList.add('inactive')
+    mobileMenu.classList.add('inactive')
 }
