@@ -16,6 +16,8 @@ const desktopMenuGoToMyorders = document.querySelector('.go-to-my-orders')
 const homeMainContainer = document.querySelector('.main-container')
 const mobileMenuGoToMyorders = document.querySelector('.mobile-go-to-my-orders')
 const mobileMenuGoToMyAccount = document.querySelector('.mobile-go-to-my-account')
+const orderListDetail = document.querySelector('.order-list-detail')
+const myPurchase = document.querySelector('.purchase-container')
 
 navbarEmail.addEventListener('click', toggleDesktopMenu)
 menuMobileIcon.addEventListener('click', toggleMobileMenu)
@@ -27,6 +29,7 @@ logoHome.addEventListener('click', gotToHome)
 desktopMenuGoToMyorders.addEventListener('click', openMyOrders)
 mobileMenuGoToMyAccount.addEventListener('click', openMyAccount)
 mobileMenuGoToMyorders.addEventListener('click', openMyOrders)
+orderListDetail.addEventListener('click', openOrderDetails)
 
 function toggleDesktopMenu() {
     const isAsideClosed = shoppingCartAside.classList.contains('inactive');
@@ -195,6 +198,7 @@ function openMyAccount() {
     myOrders.classList.add('inactive')
     homeMainContainer.classList.add('inactive')
     mobileMenu.classList.add('inactive')
+    myPurchase.classList.add('inactive')
 }
 
 function gotToHome() {
@@ -202,6 +206,7 @@ function gotToHome() {
     myOrders.classList.add('inactive')
     homeMainContainer.classList.remove('inactive')
     mobileMenu.classList.add('inactive')
+    myPurchase.classList.add('inactive')
 }
 
 function openMyOrders() {
@@ -210,4 +215,10 @@ function openMyOrders() {
     desktopMenu.classList.add('inactive')
     homeMainContainer.classList.add('inactive')
     mobileMenu.classList.add('inactive')
+    myPurchase.classList.add('inactive')
+}
+
+function openOrderDetails() {
+    myPurchase.classList.remove('inactive')
+    myOrders.classList.add('inactive')
 }

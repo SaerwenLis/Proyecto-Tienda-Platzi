@@ -14,7 +14,7 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 .inactive {
-    display: none !important;
+    display: none;
 }
 .primary-button {
     background-color: var(--hospital-green);
@@ -231,7 +231,7 @@ nav .navbar-left ul {
     font-size: var(--lg);
     font-weight: bold;
 }
-.my-order-content {
+.my-orders-content {
     margin-bottom: 8px;
 }
 .order-total {
@@ -459,7 +459,7 @@ nav .navbar-left ul {
     color: var(--very-light-pink);
 }
 /* my orders list */
-.my-orders {
+.my-orders-list-container {
     width: 100%;
     height: 100vh;
     display: grid;
@@ -502,7 +502,66 @@ nav .navbar-left ul {
     font-weight: bold;
     text-align: end;
 }
+.order-list-detail:hover {
+    cursor: pointer;
+}
 
+/* my order purchase */
+.my-order-purchase {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.order-total-purchase {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: center;
+    background-color: var(--text-input-field);
+    margin-bottom: 24px;
+    border-radius: 8px;
+    padding: 0 24px;
+}
+.order-total-purchase p:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+}
+.order-total-purchase p span:nth-child(1) {
+    font-size: var(--md);
+    font-weight: bold;
+}
+.order-total-purchase p span:nth-child(2) {
+    font-size: var(--sm);
+    color: var(--very-light-pink);
+}
+.order-total-purchase p:nth-child(2) {
+    font-weight: bold;
+    text-align: end;
+}
+.shopping-cart-purchase {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: center;
+}
+.shopping-cart-purchase figure {
+    margin: 0;
+}
+.shopping-cart-purchase figure img {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+} 
+.shopping-cart-purchase p:nth-child(2) {
+    color: var(--very-light-pink);
+}
+.shopping-cart-purchase p:nth-child(3) {
+    font-size: var(--md);
+    font-weight: bold;
+} 
 @media (max-width:640px) {
     .menu-icon {
         display: block;
