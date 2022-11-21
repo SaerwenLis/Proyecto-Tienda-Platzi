@@ -5,8 +5,8 @@ const mobileMenu = document.querySelector('.mobile-menu')
 const menuShoppingCart = document.querySelector('.navbar-shoppingcart')
 const shoppingCartAside = document.querySelector('.shopping-cart-container')
 const cardsContainer = document.querySelector('.cards-container')
-const productDetailAside = document.querySelector('.product-detail')
-const productDetailCloseIcon = document.querySelector('.product-detail-close')
+const productDetailAside = document.querySelector('.product-detail') 
+const productDetailCloseIcon = document.querySelector('.product-detail-close') 
 const titleShoppingCart = document.querySelector('.title-container')
 const desktopMenuGoToMyAccount = document.querySelector('.go-to-my-account')
 const myAccount = document.querySelector('.my-account')
@@ -25,7 +25,7 @@ menuShoppingCart.addEventListener('click', toggleShoppingCart)
 productDetailCloseIcon.addEventListener('click', closeProductDetail) 
 titleShoppingCart.addEventListener('click', closeShoppingCart)
 desktopMenuGoToMyAccount.addEventListener('click', openMyAccount)
-logoHome.addEventListener('click', gotToHome)
+logoHome.addEventListener('click', goToHome)
 desktopMenuGoToMyorders.addEventListener('click', openMyOrders)
 mobileMenuGoToMyAccount.addEventListener('click', openMyAccount)
 mobileMenuGoToMyorders.addEventListener('click', openMyOrders)
@@ -75,6 +75,7 @@ productList.push({
     name: 'Guitar',
     price: '100,00',
     image: './Images/guitar.jpeg',
+    description: 'Comfortable 1/2 size guitar, with standard tuning, layered Mahogany top, back and sides, satin polyurethane body and neck finish. Natural wood has unique spirit and varies greatly in color richness and wood grain.'
 })
 productList.push({
     name: 'Bike',
@@ -207,12 +208,13 @@ function openMyAccount() {
     myPurchase.classList.add('inactive')
 }
 
-function gotToHome() {
+function goToHome() {
     myAccount.classList.add('inactive')
     myOrders.classList.add('inactive')
     homeMainContainer.classList.remove('inactive')
     mobileMenu.classList.add('inactive')
     myPurchase.classList.add('inactive')
+    desktopMenu.classList.add('inactive')
 }
 
 function openMyOrders() {
