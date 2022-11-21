@@ -161,13 +161,19 @@ function renderProducts(array) {
 
         function changeCartIcon() {
             productImgCart.setAttribute('src', './Icons/bt_added_to_cart.svg')
-            removeProductFromCart.classList.add('remove-product')
-            removeProductFromCart.addEventListener('click', changeBackCartIcon)
-            function changeBackCartIcon() {
-                productImgCart.setAttribute('src', './Icons/bt_add_to_cart.svg');
-/*                 removeProductFromCart.style.display('none') */
+            removeProductFromCart.classList.add('remove-product')           
+        }
+
+        removeProductFromCart.addEventListener('click', changeBackCartIcon)
+
+        function changeBackCartIcon() { 
+            productImgCart.setAttribute('src', './Icons/bt_add_to_cart.svg')
+            if (productImgCart.getAttribute('src') === './Icons/bt_add_to_cart.svg') {
+                removeProductFromCart.classList.toggle('remove-product')
+            } else if (productImgCart.setAttribute('src') === './Icons/bt_added_to_cart.svg') {
+                removeProductFromCart.classList.toggle('inactive')
             }
-        }        
+        }
 
         productInfoFigure.appendChild(productImgCart);
 
