@@ -288,7 +288,7 @@ nav .navbar-left ul {
     grid-template-columns: repeat(auto-fill, 240px);
     gap: 26px;
     place-content: center;
-    margin-top: 26px;
+    margin-top: 84px;
 }
 .product-card {
     width: 240px;
@@ -562,6 +562,34 @@ nav .navbar-left ul {
     font-size: var(--md);
     font-weight: bold;
 } 
+.search-container {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    left: 34px;
+    top: 76px;
+}
+.search-bar {
+    width: 221px;
+    height: 33px;
+    background-color: var(--text-input-field);
+    border: 1px solid var(--text-input-field);
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif;
+}
+.search-filter label {
+    font-size: var(--sm);
+    padding-left: 10px;
+    font-family: 'Quicksand', sans-serif;
+}
+.search-filter select {
+    width: 110px;
+    height: 33px;
+    border: transparent;
+    font-size: var(--sm);
+    color: var(--very-light-pink);
+    font-family: 'Quicksand', sans-serif;
+}
 @media (max-width:640px) {
     .menu-icon {
         display: block;
@@ -634,6 +662,16 @@ nav .navbar-left ul {
     }
     .title-my-orders {
         display: none;
+    }
+    .cards-container {
+        margin-top: 120px;
+    }
+    .search-container {
+        flex-direction: column;
+        width: 80%;
+    }
+    .search-filter {
+        margin-top: 10px;
     }
 }
 @media (max-width:770px) {
