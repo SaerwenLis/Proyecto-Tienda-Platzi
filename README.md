@@ -3,6 +3,8 @@
 
 Este es mi proyecto de maquetacion HTML y CSS del Curso Práctico de Frontend Developer de Platzi
 
+[Deploy](https://saerwenlis.github.io/Proyecto-Tienda-Platzi/)
+
 Para ver lo implementado en el Curso Práctico de JavaScript ve a la rama javascript
 
 ### **Créditos del diseño:** 
